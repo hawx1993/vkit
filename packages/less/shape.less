@@ -1,0 +1,43 @@
+//设置宽高
+.size(@width, @height) {
+  width: @width;
+  height: @height;
+}
+
+//三角形 向上
+.triangle-up(@width,@height,@border-color) {
+  width: 0;
+  height: 0;
+  border-left: @width solid transparent;
+  border-right: @width solid transparent;
+  border-bottom: @height solid @border-color;
+}
+//三角形 向下
+.triangle-down(@width,@height,@border-color) {
+  width: 0;
+  height: 0;
+  border-left: @width solid transparent;
+  border-right: @width solid transparent;
+  border-top: @height solid @border-color;
+}
+//三角形 向左
+.triangle-left(@width,@height,@border-color) {
+  width: 0;
+  height: 0;
+  border-top: @width solid transparent;
+  border-right: @height solid @border-color;
+  border-bottom: @width solid transparent;
+}
+//三角形 向右
+.triangle-right(@width,@height,@border-color) {
+  width: 0;
+  height: 0;
+  border-top: @width solid transparent;
+  border-left: @height solid @border-color;
+  border-bottom: @width solid transparent;
+}
+
+//矩形
+.rect(@width,@height){
+  .size(@width,@height)
+}

@@ -1,0 +1,78 @@
+// Mixin itself
+.clearfix() {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+//单行文本垂直居中，父元素不可设置边框
+.center-text(@height){
+    height: @height;
+    line-height: @height;
+}
+//单行文本水平垂直居中设置,应用于子元素时，高度与父元素一致
+//@both:both为true时，水平垂直居中
+.center-text(@height,@both) when (@both){
+    .center-text(@height);
+    text-align: center;
+}
+//父元素适用
+//适用情况：1.图片/icon 与文字的水平/垂直居中
+.center-flex-in-parent{
+    display: flex;
+    align-items: center; /*垂直居中*/
+}
+//@both true的时候水平垂直居中
+.center-flex-in-parent(@both) when (@both){
+    .center-flex-in-parent;
+    justify-content: center; /* 水平居中 */
+}
+.center-table-in-parent{
+    display: table;
+}
+.center-table-in-child{
+    display:table-cell;
+    text-align:center;
+    vertical-align: middle;
+}
+
+.center-every-thing{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: -webkit-box;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+}
+//块元素水平居中
+.center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.show {
+    display: block !important;
+}
+.hidden {
+    display: none !important;
+}
+.fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+
+.fixed-bottom {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}

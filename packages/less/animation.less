@@ -1,0 +1,138 @@
+@easeOutCubic: cubic-bezier(0, 0.59, 0.375, 1);
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes expandIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.85);
+    animation-timing-function: @easeOutCubic;
+    -webkit-animation-timing-function: @easeOutCubic;
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+@keyframes expandInBounce {
+  0% {
+    opacity: 0;
+    transform: scale(0.85);
+    animation-timing-function: @easeOutCubic;
+  }
+  70% {
+    transform: scale(1.03);
+    animation-timing-function: ease;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    animation-timing-function: ease;
+  }
+}
+
+@keyframes shrinkInBounce {
+  0% {
+    opacity: 0;
+    transform: scale(1.2);
+    animation-timing-function: @easeOutCubic;
+    -webkit-animation-timing-function: @easeOutCubic;
+  }
+  70% {
+    transform: scale(0.95);
+    animation-timing-function: ease;
+    -webkit-animation-timing-function: ease;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes hingeFlipIn {
+  0% {
+    opacity: 0;
+    transform: perspective(600px) rotateX(0deg);
+    transform-origin: center top;
+    animation-timing-function: @easeOutCubic;
+    -webkit-animation-timing-function: @easeOutCubic;
+  }
+
+  50% {
+    transform: perspective(600px) rotateX(-10deg);
+    transform-origin: center top;
+    animation-timing-function: ease-in;
+    -webkit-animation-timing-function: ease-in;
+  }
+
+  100% {
+    opacity: 1;
+    transform: perspective(600px) rotateX(0deg);
+    transform-origin: center top;
+    animation-timing-function: ease-out;
+    -webkit-animation-timing-function: ease-out;
+  }
+}
+//loading动画
+@keyframes spin{
+  to {
+    transform: translateY( -6.0em);
+  }
+}
+@keyframes spin1 {
+  to {
+    transform: translateY(-15.0em);
+  }
+}
+.loading {
+  display: inline-block;
+  overflow: hidden;
+  height: 1.3em;
+  margin-top: -0.3em;
+  line-height: 1.5em;
+  vertical-align: text-bottom;
+}
+
+.loading::after {
+  display: inline-table;
+  white-space: pre;
+  text-align: left;
+}
+.loading::after {
+  content: "\A.\A..\A...";
+  animation: spin 2s steps(4) infinite;
+}
+.loading.dots::after {
+  content: "⠋\A⠙\A⠹\A⠸\A⠼\A⠴\A⠦\A⠧\A⠇\A⠏";
+  animation: spin1 1s steps(10) infinite;
+}
+.fade-in{
+  animation-name: fadeIn;
+}
+//慢放大
+.expend-in{
+  animation-name: expandIn;
+}
+//弹跳慢放大
+.expend-in-bounce{
+  animation-name: expandInBounce;
+}
+//收缩弹跳慢放大
+.shrink-in-bounce{
+  animation-name: shrinkInBounce;
+}
+//悬挂翻转
+.hinge-flip-in{
+  animation-name: hingeFlipIn;
+}

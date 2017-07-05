@@ -1,0 +1,18 @@
+/*  多行文本省略
+ *  @line-number 行数
+ */
+
+.multi-line-ellipsis(@line-number) {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: @line-number;
+    -webkit-box-orient: vertical;
+    word-break:break-all;
+    text-overflow: ellipsis;
+}
+//图片，形状大小及圆角设置
+.rounded(@radius,@width,@height){
+    width: @width;
+    height: @height;
+    border-radius: @radius;
+}
